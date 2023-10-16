@@ -33,33 +33,5 @@ struct Helper {
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
     }
-    
-    
-    static func downloadImages(_ images: [String?], completed: @escaping ([UIImage]) -> Void ) {
-        let images = images.compactMap { URL(string: $0 ?? "") }
-        var imagesArray = [UIImage]()
-        
-        for (idx,url) in images.enumerated() {
-            let resource = KF.ImageResource(downloadURL: url)
-            
-            KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
-                switch result {
-                case .success(let value):
-                    print("Image: \(value.image). Got from: \(value.cacheType)")
-                    imagesArray.append(value.image)
-                    if idx == images.count - 1 {
-                        completed(imagesArray)
-                    }
-                case .failure(let error):
-                    print("Error: \(error)")
-                    if idx == images.count - 1 {
-                        completed(imagesArray)
-                    }
-                }
-            }
-            
-        }
-    }
-
 
 }

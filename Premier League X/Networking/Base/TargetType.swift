@@ -24,4 +24,5 @@ protocol TargetType {
     var method: HTTPMethod { get }         /// The HTTP method used in the request.
     var task: Task { get }                 /// The type of HTTP task to be performed.
     var paramter: [String: Any]? { get }   /// Body Paramter
+    var headers: HTTPHeaders {get}
 }

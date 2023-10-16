@@ -13,7 +13,7 @@ class BaseAPI<T: TargetType> {
     //var backgroundTaskManager: BackgroundTaskManagerProtocol = BackgroundTaskManager()
     var responseAnalyser: ResponseAnalyserManagerProtocol    = ResponseAnalyserManager()
     
-    func fetchData<M: Codable>(target: T, responseClass: M.Type, header:HTTPHeaders, completion:@escaping (Swift.Result<M?,AuthError>) -> Void) {
+    func fetchData<M: Codable>(target: T, responseClass: M.Type, completion:@escaping (Swift.Result<M?,AuthError>) -> Void) {
         
         let method   = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let params   = buildParams(task: target.task)
@@ -25,19 +25,19 @@ class BaseAPI<T: TargetType> {
             return
         }
         print("HEADER ===== >>>")
-        print(header)
+        print(target.headers)
         
         
         AF.request(target.baseURL + target.path,
                    method: method,
                    parameters: params.0,
                    encoding: params.1,
-                   headers: header).responseData { [weak self] response in
+                   headers: target.headers).responseData { [weak self] response in
             
             print("😳==URl==\(target.baseURL + target.path) 💁🏻‍♀️==params==\(params)")
             
-            //1- Analyse API Response
-            if let error = self?.responseAnalyser.analysAPIResponse(response: response) {
+            //1- Analys API Response
+            if let error = self?.responseAnalyser.analyseAPIResponse(response: response) {
                 completion(.failure(error))
                 return
             }

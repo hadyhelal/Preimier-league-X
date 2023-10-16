@@ -36,16 +36,20 @@ struct Match: Codable {
     let competition: Competition?
     let season: Season?
     let id: Int?
-    let utcDate: Date?
+    let utcDate: String?
     let status: Status?
     let matchday: Int?
     let stage: String?
     let group: JSONNull?
-    let lastUpdated: Date?
+    let lastUpdated: String?
     let homeTeam, awayTeam: Team?
     let score: Score?
     let odds: Odds?
     let referees: [Referee]?
+    
+    var matchDate: Date {
+        DateFormatterManager.getLeagueDate(utcDate ?? "")
+    }
 }
 
 // MARK: - Area
@@ -117,6 +121,7 @@ struct ResultSet: Codable {
     let first, last: String?
     let played: Int?
 }
+
 
 // MARK: - Encode/decode helpers
 

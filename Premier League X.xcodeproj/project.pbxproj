@@ -15,15 +15,16 @@
 		07585E462ADC764D0052697F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E402ADC764D0052697F /* BaseResponse.swift */; };
 		07585E472ADC764D0052697F /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E412ADC764D0052697F /* BaseAPI.swift */; };
 		07585E482ADC764D0052697F /* ResponseAnalyserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E422ADC764D0052697F /* ResponseAnalyserManager.swift */; };
-		07585E532ADC7CD20052697F /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 07585E522ADC7CD20052697F /* SwiftMessages */; };
-		07585E552ADC7CD20052697F /* SwiftMessages-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 07585E542ADC7CD20052697F /* SwiftMessages-Dynamic */; };
 		07585E592ADC7EA20052697F /* ShowMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E572ADC7EA20052697F /* ShowMessages.swift */; };
 		07585E5F2ADC7EFD0052697F /* MatchesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E5E2ADC7EFD0052697F /* MatchesListVC.swift */; };
 		07585E612ADC7FAF0052697F /* Data + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E602ADC7FAF0052697F /* Data + Ext.swift */; };
-		07585E6A2ADC80370052697F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E692ADC80370052697F /* BaseViewController.swift */; };
-		07585E6C2ADC80500052697F /* Base Display Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E6B2ADC80500052697F /* Base Display Protocol.swift */; };
 		07585E732ADC82780052697F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E722ADC82780052697F /* Helper.swift */; };
 		07585E752ADC83DF0052697F /* MatchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E742ADC83DF0052697F /* MatchesModel.swift */; };
+		076906C72ADD9872007B0036 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076906C52ADD9872007B0036 /* BaseViewController.swift */; };
+		076906C82ADD9872007B0036 /* Base Display Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076906C62ADD9872007B0036 /* Base Display Protocol.swift */; };
+		076906CB2ADD9891007B0036 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 076906CA2ADD9891007B0036 /* SwiftMessages */; };
+		076906CE2ADD9930007B0036 /* DailyMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076906CC2ADD9930007B0036 /* DailyMatchesCell.swift */; };
+		076906CF2ADD9930007B0036 /* DailyMatchesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076906CD2ADD9930007B0036 /* DailyMatchesCell.xib */; };
 		0769F8552ADC69950009887B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F8542ADC69950009887B /* AppDelegate.swift */; };
 		0769F8572ADC69950009887B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F8562ADC69950009887B /* SceneDelegate.swift */; };
 		0769F85C2ADC69950009887B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0769F85A2ADC69950009887B /* Main.storyboard */; };
@@ -31,21 +32,12 @@
 		0769F8612ADC69970009887B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0769F8602ADC69970009887B /* Assets.xcassets */; };
 		0769F8642ADC69970009887B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0769F8622ADC69970009887B /* LaunchScreen.storyboard */; };
 		0769F86F2ADC69970009887B /* Premier_League_XTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F86E2ADC69970009887B /* Premier_League_XTests.swift */; };
-		0769F8792ADC69970009887B /* Premier_League_XUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F8782ADC69970009887B /* Premier_League_XUITests.swift */; };
-		0769F87B2ADC69970009887B /* Premier_League_XUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F87A2ADC69970009887B /* Premier_League_XUITestsLaunchTests.swift */; };
 		0769F88A2ADC6A760009887B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0769F8892ADC6A760009887B /* Alamofire */; };
 		0769F88D2ADC6AED0009887B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0769F88C2ADC6AED0009887B /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		0769F86B2ADC69970009887B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0769F8492ADC69950009887B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0769F8502ADC69950009887B;
-			remoteInfo = "Premier League X";
-		};
-		0769F8752ADC69970009887B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0769F8492ADC69950009887B /* Project object */;
 			proxyType = 1;
@@ -68,10 +60,12 @@
 		07585E572ADC7EA20052697F /* ShowMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMessages.swift; sourceTree = "<group>"; };
 		07585E5E2ADC7EFD0052697F /* MatchesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListVC.swift; sourceTree = "<group>"; };
 		07585E602ADC7FAF0052697F /* Data + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data + Ext.swift"; sourceTree = "<group>"; };
-		07585E692ADC80370052697F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		07585E6B2ADC80500052697F /* Base Display Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Base Display Protocol.swift"; sourceTree = "<group>"; };
 		07585E722ADC82780052697F /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		07585E742ADC83DF0052697F /* MatchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesModel.swift; sourceTree = "<group>"; };
+		076906C52ADD9872007B0036 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		076906C62ADD9872007B0036 /* Base Display Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Base Display Protocol.swift"; sourceTree = "<group>"; };
+		076906CC2ADD9930007B0036 /* DailyMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMatchesCell.swift; sourceTree = "<group>"; };
+		076906CD2ADD9930007B0036 /* DailyMatchesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMatchesCell.xib; sourceTree = "<group>"; };
 		0769F8512ADC69950009887B /* Premier League X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Premier League X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0769F8542ADC69950009887B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0769F8562ADC69950009887B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +76,6 @@
 		0769F8652ADC69970009887B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0769F86A2ADC69970009887B /* Premier League XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Premier League XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0769F86E2ADC69970009887B /* Premier_League_XTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Premier_League_XTests.swift; sourceTree = "<group>"; };
-		0769F8742ADC69970009887B /* Premier League XUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Premier League XUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0769F8782ADC69970009887B /* Premier_League_XUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Premier_League_XUITests.swift; sourceTree = "<group>"; };
-		0769F87A2ADC69970009887B /* Premier_League_XUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Premier_League_XUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,21 +83,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07585E552ADC7CD20052697F /* SwiftMessages-Dynamic in Frameworks */,
 				0769F88D2ADC6AED0009887B /* Kingfisher in Frameworks */,
-				07585E532ADC7CD20052697F /* SwiftMessages in Frameworks */,
+				076906CB2ADD9891007B0036 /* SwiftMessages in Frameworks */,
 				0769F88A2ADC6A760009887B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0769F8672ADC69970009887B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0769F8712ADC69970009887B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -197,20 +180,12 @@
 		07585E5A2ADC7EAB0052697F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				076906C62ADD9872007B0036 /* Base Display Protocol.swift */,
+				076906C52ADD9872007B0036 /* BaseViewController.swift */,
 				07585E722ADC82780052697F /* Helper.swift */,
 				07585E572ADC7EA20052697F /* ShowMessages.swift */,
-				07585E5B2ADC7EAC0052697F /* Bases FILES */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		07585E5B2ADC7EAC0052697F /* Bases FILES */ = {
-			isa = PBXGroup;
-			children = (
-				07585E692ADC80370052697F /* BaseViewController.swift */,
-				07585E6B2ADC80500052697F /* Base Display Protocol.swift */,
-			);
-			path = "Bases FILES";
 			sourceTree = "<group>";
 		};
 		07585E6D2ADC80830052697F /* Models */ = {
@@ -243,6 +218,8 @@
 		07585E702ADC80BB0052697F /* UITableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				076906CC2ADD9930007B0036 /* DailyMatchesCell.swift */,
+				076906CD2ADD9930007B0036 /* DailyMatchesCell.xib */,
 			);
 			path = UITableViewCells;
 			sourceTree = "<group>";
@@ -259,7 +236,6 @@
 			children = (
 				0769F8532ADC69950009887B /* Premier League X */,
 				0769F86D2ADC69970009887B /* Premier League XTests */,
-				0769F8772ADC69970009887B /* Premier League XUITests */,
 				0769F8522ADC69950009887B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -269,7 +245,6 @@
 			children = (
 				0769F8512ADC69950009887B /* Premier League X.app */,
 				0769F86A2ADC69970009887B /* Premier League XTests.xctest */,
-				0769F8742ADC69970009887B /* Premier League XUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,15 +271,6 @@
 			path = "Premier League XTests";
 			sourceTree = "<group>";
 		};
-		0769F8772ADC69970009887B /* Premier League XUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0769F8782ADC69970009887B /* Premier_League_XUITests.swift */,
-				0769F87A2ADC69970009887B /* Premier_League_XUITestsLaunchTests.swift */,
-			);
-			path = "Premier League XUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,8 +290,7 @@
 			packageProductDependencies = (
 				0769F8892ADC6A760009887B /* Alamofire */,
 				0769F88C2ADC6AED0009887B /* Kingfisher */,
-				07585E522ADC7CD20052697F /* SwiftMessages */,
-				07585E542ADC7CD20052697F /* SwiftMessages-Dynamic */,
+				076906CA2ADD9891007B0036 /* SwiftMessages */,
 			);
 			productName = "Premier League X";
 			productReference = 0769F8512ADC69950009887B /* Premier League X.app */;
@@ -349,24 +314,6 @@
 			productReference = 0769F86A2ADC69970009887B /* Premier League XTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0769F8732ADC69970009887B /* Premier League XUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0769F8842ADC69970009887B /* Build configuration list for PBXNativeTarget "Premier League XUITests" */;
-			buildPhases = (
-				0769F8702ADC69970009887B /* Sources */,
-				0769F8712ADC69970009887B /* Frameworks */,
-				0769F8722ADC69970009887B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0769F8762ADC69970009887B /* PBXTargetDependency */,
-			);
-			name = "Premier League XUITests";
-			productName = "Premier League XUITests";
-			productReference = 0769F8742ADC69970009887B /* Premier League XUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -384,10 +331,6 @@
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 0769F8502ADC69950009887B;
 					};
-					0769F8732ADC69970009887B = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 0769F8502ADC69950009887B;
-					};
 				};
 			};
 			buildConfigurationList = 0769F84C2ADC69950009887B /* Build configuration list for PBXProject "Premier League X" */;
@@ -402,7 +345,7 @@
 			packageReferences = (
 				0769F8882ADC6A760009887B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0769F88B2ADC6AED0009887B /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				07585E512ADC7CD20052697F /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				076906C92ADD9891007B0036 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = 0769F8522ADC69950009887B /* Products */;
 			projectDirPath = "";
@@ -410,7 +353,6 @@
 			targets = (
 				0769F8502ADC69950009887B /* Premier League X */,
 				0769F8692ADC69970009887B /* Premier League XTests */,
-				0769F8732ADC69970009887B /* Premier League XUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -421,19 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0769F8642ADC69970009887B /* LaunchScreen.storyboard in Resources */,
+				076906CF2ADD9930007B0036 /* DailyMatchesCell.xib in Resources */,
 				0769F8612ADC69970009887B /* Assets.xcassets in Resources */,
 				0769F85C2ADC69950009887B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0769F8682ADC69970009887B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0769F8722ADC69970009887B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,23 +384,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				0769F8552ADC69950009887B /* AppDelegate.swift in Sources */,
-				07585E6C2ADC80500052697F /* Base Display Protocol.swift in Sources */,
-				07585E612ADC7FAF0052697F /* Data + Ext.swift in Sources */,
+				0769F8572ADC69950009887B /* SceneDelegate.swift in Sources */,
 				0769F85F2ADC69950009887B /* Premier_League_X.xcdatamodeld in Sources */,
+				07585E482ADC764D0052697F /* ResponseAnalyserManager.swift in Sources */,
 				07585E5F2ADC7EFD0052697F /* MatchesListVC.swift in Sources */,
 				07585E452ADC764D0052697F /* TargetType.swift in Sources */,
-				07585E2F2ADC758A0052697F /* UITableView + Ext.swift in Sources */,
-				07585E6A2ADC80370052697F /* BaseViewController.swift in Sources */,
 				07585E732ADC82780052697F /* Helper.swift in Sources */,
+				076906C82ADD9872007B0036 /* Base Display Protocol.swift in Sources */,
+				076906C72ADD9872007B0036 /* BaseViewController.swift in Sources */,
 				07585E752ADC83DF0052697F /* MatchesModel.swift in Sources */,
 				07585E592ADC7EA20052697F /* ShowMessages.swift in Sources */,
 				07585E462ADC764D0052697F /* BaseResponse.swift in Sources */,
 				07585E472ADC764D0052697F /* BaseAPI.swift in Sources */,
 				07585E432ADC764D0052697F /* BackgroundTaskManager.swift in Sources */,
 				07585E302ADC758A0052697F /* UIViewController + Ext.swift in Sources */,
-				07585E482ADC764D0052697F /* ResponseAnalyserManager.swift in Sources */,
+				07585E2F2ADC758A0052697F /* UITableView + Ext.swift in Sources */,
+				076906CE2ADD9930007B0036 /* DailyMatchesCell.swift in Sources */,
+				07585E612ADC7FAF0052697F /* Data + Ext.swift in Sources */,
 				07585E442ADC764D0052697F /* AuthError.swift in Sources */,
-				0769F8572ADC69950009887B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,15 +413,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0769F8702ADC69970009887B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0769F8792ADC69970009887B /* Premier_League_XUITests.swift in Sources */,
-				0769F87B2ADC69970009887B /* Premier_League_XUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -492,11 +420,6 @@
 			isa = PBXTargetDependency;
 			target = 0769F8502ADC69950009887B /* Premier League X */;
 			targetProxy = 0769F86B2ADC69970009887B /* PBXContainerItemProxy */;
-		};
-		0769F8762ADC69970009887B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0769F8502ADC69950009887B /* Premier League X */;
-			targetProxy = 0769F8752ADC69970009887B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -732,42 +655,6 @@
 			};
 			name = Release;
 		};
-		0769F8852ADC69970009887B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D5R69Q32RG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hadyorg.Premier-League-XUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Premier League X";
-			};
-			name = Debug;
-		};
-		0769F8862ADC69970009887B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D5R69Q32RG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "hadyorg.Premier-League-XUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Premier League X";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -798,19 +685,10 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0769F8842ADC69970009887B /* Build configuration list for PBXNativeTarget "Premier League XUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0769F8852ADC69970009887B /* Debug */,
-				0769F8862ADC69970009887B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		07585E512ADC7CD20052697F /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+		076906C92ADD9891007B0036 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages.git";
 			requirement = {
@@ -837,15 +715,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		07585E522ADC7CD20052697F /* SwiftMessages */ = {
+		076906CA2ADD9891007B0036 /* SwiftMessages */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 07585E512ADC7CD20052697F /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			package = 076906C92ADD9891007B0036 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
-		};
-		07585E542ADC7CD20052697F /* SwiftMessages-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07585E512ADC7CD20052697F /* XCRemoteSwiftPackageReference "SwiftMessages" */;
-			productName = "SwiftMessages-Dynamic";
 		};
 		0769F8892ADC6A760009887B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

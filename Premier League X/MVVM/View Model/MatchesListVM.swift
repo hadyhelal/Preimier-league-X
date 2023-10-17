@@ -7,7 +7,13 @@
 
 import Foundation
 
-class MatchesListVM {
+protocol MatchesArrangedProtocol {
+    func getArrangedMatchesFrom(_ matches: [Match]) -> [MatchesSection]
+    func removeAnyPreviousMatches(arrangedMatches: [MatchesSection]) ->  [MatchesSection]
+    func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection]
+}
+
+class MatchesListVM: MatchesArrangedProtocol {
     
     
     var successMessage: ( (String) -> Void )?
@@ -67,11 +73,11 @@ class MatchesListVM {
         return arrangedMatches
     }
     
-    fileprivate func removeAnyPreviousMatches(arrangedMatches: [MatchesSection]) ->  [MatchesSection] {
+    internal func removeAnyPreviousMatches(arrangedMatches: [MatchesSection]) ->  [MatchesSection] {
         arrangedMatches.filter{ Date() < $0.date || Date().hasSame([.year, .month, .day], as: $0.date)}
     }
     
-    fileprivate func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection] {
+    internal func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection] {
         var arrangedMatches = [MatchesSection]()
         
         var nowDay = MatchesSection(date: matches.first!.matchDate, matches: [matches.first!])

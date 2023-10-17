@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07585E2F2ADC758A0052697F /* UITableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E2D2ADC758A0052697F /* UITableView + Ext.swift */; };
-		07585E302ADC758A0052697F /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E2E2ADC758A0052697F /* UIViewController + Ext.swift */; };
 		07585E442ADC764D0052697F /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E3E2ADC764D0052697F /* AuthError.swift */; };
 		07585E452ADC764D0052697F /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E3F2ADC764D0052697F /* TargetType.swift */; };
 		07585E472ADC764D0052697F /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07585E412ADC764D0052697F /* BaseAPI.swift */; };
@@ -59,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		07585E2D2ADC758A0052697F /* UITableView + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView + Ext.swift"; sourceTree = "<group>"; };
-		07585E2E2ADC758A0052697F /* UIViewController + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
 		07585E3E2ADC764D0052697F /* AuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		07585E3F2ADC764D0052697F /* TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		07585E412ADC764D0052697F /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				079642FC2ADDAC92002DFD00 /* UIImageView + Ext.swift */,
 				07585E602ADC7FAF0052697F /* Data + Ext.swift */,
 				07585E2D2ADC758A0052697F /* UITableView + Ext.swift */,
-				07585E2E2ADC758A0052697F /* UIViewController + Ext.swift */,
 				5B9B16222ADE7D580076BFDB /* Date+Ext.swift */,
 			);
 			path = Extensions;
@@ -472,7 +469,6 @@
 				5B9B162B2ADE82570076BFDB /* DatabaseContext.swift in Sources */,
 				5B9B16292ADE81F80076BFDB /* DatabaseUtilities.swift in Sources */,
 				079642F22ADD9E15002DFD00 /* MatchesAPI.swift in Sources */,
-				07585E302ADC758A0052697F /* UIViewController + Ext.swift in Sources */,
 				07585E2F2ADC758A0052697F /* UITableView + Ext.swift in Sources */,
 				076906CE2ADD9930007B0036 /* DailyMatchesCell.swift in Sources */,
 				5B9B16312ADE9FD60076BFDB /* MatchesHeaderView.swift in Sources */,

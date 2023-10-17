@@ -1,9 +1,8 @@
 //
 //  UITableView + Ext.swift
-//  Roshan
+//  Premier League X
 //
-//  Created by WAITEG on 14/11/2022.
-//
+//  Created by Hady on 15/10/2023.
 
 import UIKit
 
@@ -12,16 +11,7 @@ extension UITableView {
         let nibName = String(describing: cell.self) // transform classCellName to String
         self.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
     }
-    
-    func isExist(indexPath: IndexPath) -> Bool {
-        if indexPath.section >= self.numberOfSections {
-            return false
-        }
-        if indexPath.row >= self.numberOfRows(inSection: indexPath.section) {
-            return false
-        }
-        return true
-    }
+
 }
 
 extension UICollectionView {

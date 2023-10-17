@@ -56,7 +56,7 @@ class MatchesListVM {
     }
     
     fileprivate func removeAnyPreviousMatches(arrangedMatches: [ (Date,[Match]) ]) ->  [ (Date,[Match]) ] {
-        arrangedMatches.filter{ Date() < $0.0 || Date().hasSame(.day, as: $0.0)}
+        arrangedMatches.filter{ Date() < $0.0 || Date().hasSame([.year, .month, .day], as: $0.0)}
     }
     
     fileprivate func getArrangedMatches(_ matches: inout [Match] ) -> [ (Date,[Match]) ] {
@@ -64,7 +64,7 @@ class MatchesListVM {
         
         var nowDay: (Date,[Match]) = (matches.first!.matchDate, [matches.first!] )
         
-      // arrangedMatches.append(nowDay) //First element
+        // arrangedMatches.append(nowDay) //First element
         
         //matches.removeFirst()
         

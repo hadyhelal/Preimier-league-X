@@ -14,3 +14,8 @@ We will explain most important folders:
 - I Built BaseViewController class which used as blueprint for common functionalities any UIViewController in the app.
 - BaseViewController conferming to BaseDisplay protocol which have basic
 - Also messages showed to user when error occured or any hint, has a class with abstraction layer for DI use.
+## Local Dependancies
+I made one main dependancy in this application which is ArrangeMatchManager class this class help ViewModel query match list according to our need like.
+- Arrange match list to be Deascending from newer to the older match.
+- Query arranget matched and remove any match which from begining of the season to current time.
+- Help secion items to give our ViewModel last section and row place to set.

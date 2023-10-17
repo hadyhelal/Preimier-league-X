@@ -7,11 +7,6 @@
 
 import UIKit
 
-typealias MatchesScheduals = [ PremierMatch ]
-typealias PremierMatch     = (Date,[Match])
-
-
-
 enum DisplayMatchType  {
     case matches
     case favoriteMatches
@@ -24,7 +19,8 @@ class MatchesListVC: BaseViewController {
     
     
     //Properties
-    lazy var viewModel = MatchesListVM(matchesAPI: MatchesAPI())
+    lazy var viewModel = MatchesListVM(matchesAPI: MatchesAPI(),
+                                       matchQueryManager: ArrangeMatchManager() )
     
     var matches = [MatchesSection]()
     var favoritematches = [Match]()

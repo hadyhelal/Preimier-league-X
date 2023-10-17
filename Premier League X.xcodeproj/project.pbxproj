@@ -217,7 +217,7 @@
 		07585E6F2ADC80A70052697F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				07585E712ADC80C40052697F /* UICollectionViewCells */,
+				5B9B16332ADEB0390076BFDB /* UICollectionViewCells */,
 				07585E702ADC80BB0052697F /* UITableViewCells */,
 			);
 			path = Cells;
@@ -230,13 +230,6 @@
 				076906CD2ADD9930007B0036 /* DailyMatchesCell.xib */,
 			);
 			path = UITableViewCells;
-			sourceTree = "<group>";
-		};
-		07585E712ADC80C40052697F /* UICollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
 		0769F8482ADC69950009887B = {
@@ -332,6 +325,13 @@
 				07585E6F2ADC80A70052697F /* Cells */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		5B9B16332ADEB0390076BFDB /* UICollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

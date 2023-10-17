@@ -13,7 +13,7 @@ protocol MatchesArrangedProtocol {
     func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection]
 }
 
-class MatchesListVM: MatchesArrangedProtocol {
+class MatchesListVM {
     
     
     var successMessage: ( (String) -> Void )?
@@ -24,9 +24,11 @@ class MatchesListVM: MatchesArrangedProtocol {
     var observeMatches: ( ([MatchesSection]) -> Void)?
     
     let matchesAPI: MatchesAPIProtocol
+    let matchQueryManager: MatchesArrangedProtocol
     
-    init(matchesAPI: MatchesAPIProtocol) {
+    init(matchesAPI: MatchesAPIProtocol, matchQueryManager: MatchesArrangedProtocol) {
         self.matchesAPI = matchesAPI
+        self.matchQueryManager = matchQueryManager
     }
     
     func getMatches() {
@@ -44,12 +46,13 @@ class MatchesListVM: MatchesArrangedProtocol {
                     return
                 }
                 
-                matches.sort{ $0.matchDate < $1.matchDate}
-                
-                var arrangedMatches = self.getArrangedMatches(&matches)
-                
-                arrangedMatches = self.removeAnyPreviousMatches(arrangedMatches: arrangedMatches)
-                
+//                matches.sort{ $0.matchDate < $1.matchDate}
+//
+//                var arrangedMatches = self.getArrangedMatches(&matches)
+//
+//                arrangedMatches = self.removeAnyPreviousMatches(arrangedMatches: arrangedMatches)
+//
+                let arrangedMatches = self.matchQueryManager.getArrangedMatchesFrom(matches)
                 self.observeMatches?(arrangedMatches)
                 
             case .failure(let error):
@@ -60,6 +63,16 @@ class MatchesListVM: MatchesArrangedProtocol {
         }
         
     }
+    
+
+    
+    
+    
+    
+    
+}
+
+class ArrangeMatchManager: MatchesArrangedProtocol {
     
     //we didn't make it private as we could want later to show favorite matches as well with dates...
     func getArrangedMatchesFrom(_ matches: [Match]) -> [MatchesSection] {
@@ -73,18 +86,15 @@ class MatchesListVM: MatchesArrangedProtocol {
         return arrangedMatches
     }
     
-    internal func removeAnyPreviousMatches(arrangedMatches: [MatchesSection]) ->  [MatchesSection] {
+    func removeAnyPreviousMatches(arrangedMatches: [MatchesSection]) ->  [MatchesSection] {
         arrangedMatches.filter{ Date() < $0.date || Date().hasSame([.year, .month, .day], as: $0.date)}
     }
     
-    internal func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection] {
+    func getArrangedMatches(_ matches: inout [Match] ) -> [MatchesSection] {
         var arrangedMatches = [MatchesSection]()
         
         var nowDay = MatchesSection(date: matches.first!.matchDate, matches: [matches.first!])
-        
-        // arrangedMatches.append(nowDay) //First element
-        
-        //matches.removeFirst()
+
         
         for (idx,match) in matches.enumerated() {
             guard idx < matches.count - 1 else {return arrangedMatches}
@@ -104,11 +114,8 @@ class MatchesListVM: MatchesArrangedProtocol {
         
         return arrangedMatches
         
-        
     }
     
     
-    
-    
-    
+
 }

@@ -30,7 +30,28 @@ extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyMatchesCell.id, for: indexPath) as! DailyMatchesCell
         cell.selectionStyle = .none
         
+        setUp(matchCell: cell, at: indexPath)
         
+        return  cell
+    }
+
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = MatchesHeaderView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        
+        switch displayMatchType {
+        case .matches:
+            let date = matches[section].date
+            view.headerTextLabel.text = DateFormatterManager.getLeagueDateStr(date)
+        case .favoriteMatches:
+            view.headerTextLabel.text = "Favorite Matches."
+
+        }
+        
+        return view
+    }
+    
+    private func setUp(matchCell cell: DailyMatchesCell, at indexPath: IndexPath) {
         switch displayMatchType {
         case .matches:
             cell.configure(match: matches[indexPath.section].matches[indexPath.row])
@@ -55,25 +76,7 @@ extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
             }
             
         }
-        
-        return cell
+                
     }
-
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = MatchesHeaderView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-
-        
-
-        switch displayMatchType {
-        case .matches:
-            let date = matches[section].date
-            view.headerTextLabel.text = DateFormatterManager.getLeagueDateStr(date)
-        case .favoriteMatches:
-            view.headerTextLabel.text = "Favorite Matches."
-
-        }
-        
-        return view
-    }
 }

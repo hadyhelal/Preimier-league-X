@@ -6,16 +6,25 @@
 //
 
 import XCTest
+import SVGKit
 @testable import Premier_League_X
 
 final class Premier_League_XTests: XCTestCase {
 
+    let sut: MatchesArrangedProtocol!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = ArrangeMatchManager()
+        
+    }
+    
+    func testNumberOfMatches() {
+        
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
     func testExample() throws {

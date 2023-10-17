@@ -51,6 +51,7 @@ extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
         return view
     }
     
+    //Setting up cell
     private func setUp(matchCell cell: DailyMatchesCell, at indexPath: IndexPath) {
         switch displayMatchType {
         case .matches:
@@ -59,24 +60,76 @@ extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
             cell.configure(match: favoritematches[indexPath.row])
         }
         
+        //when Favorite button get clicked
         cell.favoriteMatch = { [weak self] in
             guard let self else {return}
-            self.matches[indexPath.section].matches[indexPath.row].isFavorite.toggle()
             
-            let isFavorite = self.matches[indexPath.section].matches[indexPath.row].isFavorite
-            cell.updateFavorite(favorite: isFavorite)
+            var isFavorite = false
             
-            let match = self.matches[indexPath.section].matches[indexPath.row]
+            switch self.displayMatchType {
+            case .matches:
+                
+                //configure when user favorite/unfavorite match in base list
+                isFavorite = self.configureFavoritingBaseMatchList(at: indexPath)
 
-            switch isFavorite {
-            case true:
-                self.favoritematches.append(match)
-            case false:
-                self.favoritematches.removeAll{$0 == match}
+            case .favoriteMatches:
+                
+                //configure when user favorite/unfavorite match in favorite list
+                isFavorite = self.configureFavoritingMatchList(at: indexPath)
+                
             }
+            
+            cell.updateFavorite(favorite: isFavorite)
             
         }
                 
     }
+    
+    //Retrive selected state to update cell
+    private func configureFavoritingMatchList(at indexPath: IndexPath) -> Bool {
+        favoritematches[indexPath.row].isFavorite.toggle()
+        
+        let isFavorite = favoritematches[indexPath.row].isFavorite
+        
+        
+        let match = favoritematches[indexPath.row]
+
+        switch isFavorite {
+        case true:
+            favoritematches.append(match)
+        case false:
+            favoritematches.removeAll{$0 == match}
+            
+            matchesTableView.deleteRows(at: [indexPath], with: .right)
+            
+            if let idx = self.matches[indexPath.section].matches.firstIndex(of: match) {
+                self.matches[indexPath.section].matches[idx].isFavorite = false
+            }
+            
+            self.matchesTableView.reloadData()
+        }
+        
+        return isFavorite
+    }
+    
+    
+    //Retrive selected state to update cell
+    private func configureFavoritingBaseMatchList(at indexPath: IndexPath) -> Bool {
+        self.matches[indexPath.section].matches[indexPath.row].isFavorite.toggle()
+        
+        let isFavorite = self.matches[indexPath.section].matches[indexPath.row].isFavorite
+        
+        let match = self.matches[indexPath.section].matches[indexPath.row]
+        
+        switch isFavorite {
+        case true:
+            self.favoritematches.append(match)
+        case false:
+            self.favoritematches.removeAll{$0 == match}
+        }
+        
+        return isFavorite
+    }
+    
     
 }

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import SVGKit
+
 @testable import Premier_League_X
 
 final class Premier_League_XTests: XCTestCase {

@@ -44,7 +44,7 @@
 		5B9B162D2ADE88EC0076BFDB /* MatchesListVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B162C2ADE88EC0076BFDB /* MatchesListVC+TableView.swift */; };
 		5B9B162F2ADE9D4F0076BFDB /* MatchesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B162E2ADE9D4F0076BFDB /* MatchesSection.swift */; };
 		5B9B16312ADE9FD60076BFDB /* MatchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B16302ADE9FD60076BFDB /* MatchesHeaderView.swift */; };
-		5B9B16362ADECEB80076BFDB /* ArrangeMatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B16352ADECEB80076BFDB /* ArrangeMatchManager.swift */; };
+		5B9B16382ADED4F50076BFDB /* ArrangedMatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9B16372ADED4F50076BFDB /* ArrangedMatchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,7 @@
 		5B9B162C2ADE88EC0076BFDB /* MatchesListVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchesListVC+TableView.swift"; sourceTree = "<group>"; };
 		5B9B162E2ADE9D4F0076BFDB /* MatchesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesSection.swift; sourceTree = "<group>"; };
 		5B9B16302ADE9FD60076BFDB /* MatchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesHeaderView.swift; sourceTree = "<group>"; };
-		5B9B16352ADECEB80076BFDB /* ArrangeMatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeMatchManager.swift; sourceTree = "<group>"; };
+		5B9B16372ADED4F50076BFDB /* ArrangedMatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangedMatchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,9 +199,9 @@
 		07585E6D2ADC80830052697F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B9B16372ADED4F50076BFDB /* ArrangedMatchManager.swift */,
 				5B9B16342ADECE9D0076BFDB /* API Models */,
 				079642F32ADD9E59002DFD00 /* MatchesAPI */,
-				5B9B16352ADECEB80076BFDB /* ArrangeMatchManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -472,12 +472,12 @@
 				076906C82ADD9872007B0036 /* Base Display Protocol.swift in Sources */,
 				076906C72ADD9872007B0036 /* BaseViewController.swift in Sources */,
 				079642FD2ADDAC92002DFD00 /* UIImageView + Ext.swift in Sources */,
-				5B9B16362ADECEB80076BFDB /* ArrangeMatchManager.swift in Sources */,
 				07585E752ADC83DF0052697F /* MatchesModel.swift in Sources */,
 				07585E592ADC7EA20052697F /* ShowMessages.swift in Sources */,
 				5B9B16232ADE7D580076BFDB /* Date+Ext.swift in Sources */,
 				5B9B162D2ADE88EC0076BFDB /* MatchesListVC+TableView.swift in Sources */,
 				07585E472ADC764D0052697F /* BaseAPI.swift in Sources */,
+				5B9B16382ADED4F50076BFDB /* ArrangedMatchManager.swift in Sources */,
 				5B9B162B2ADE82570076BFDB /* DatabaseContext.swift in Sources */,
 				5B9B16292ADE81F80076BFDB /* DatabaseUtilities.swift in Sources */,
 				079642F22ADD9E15002DFD00 /* MatchesAPI.swift in Sources */,

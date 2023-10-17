@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-import MobileCoreServices
 
 class BaseViewController: UIViewController {
     
@@ -22,8 +21,6 @@ class BaseViewController: UIViewController {
     }
 
     //MARK: - Subscribtion to all basic  actions
-
-
     
     func showErrorMessage(title: String = "Error", message: String) {
         showMessages.showErrorMessage(title: title, body: message)

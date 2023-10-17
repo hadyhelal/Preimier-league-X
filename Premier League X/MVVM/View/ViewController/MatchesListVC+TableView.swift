@@ -61,29 +61,19 @@ extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        let headerTextLabel = UILabel()
-        view.backgroundColor = .secondarySystemBackground
-        headerTextLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        headerTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(headerTextLabel)
-        NSLayoutConstraint.activate([
-            headerTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        let view = MatchesHeaderView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+
         
 
         switch displayMatchType {
         case .matches:
             let date = matches[section].date
-            headerTextLabel.text = DateFormatterManager.getLeagueDateStr(date)
+            view.headerTextLabel.text = DateFormatterManager.getLeagueDateStr(date)
         case .favoriteMatches:
-            headerTextLabel.text = "Favorite Matches."
+            view.headerTextLabel.text = "Favorite Matches."
 
         }
         
         return view
     }
 }
-
-

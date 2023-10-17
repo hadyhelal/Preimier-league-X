@@ -55,6 +55,7 @@ class MatchesListVM {
         
     }
     
+    //we didn't make it private as we could want later to show favorite matches as well with dates...
     func getArrangedMatchesFrom(_ matches: [Match]) -> [MatchesSection] {
         var matchesVar = matches
         matchesVar.sort{ $0.matchDate < $1.matchDate}

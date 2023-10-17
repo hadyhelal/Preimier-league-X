@@ -48,7 +48,6 @@ class MatchesListVC: BaseViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             displayMatchType = .matches
-            
         case 1:
             displayMatchType = .favoriteMatches
         default:
@@ -83,6 +82,9 @@ class MatchesListVC: BaseViewController {
             }
         }
         
+        viewModel.networkError = { [weak self] error in
+            self?.networkError(error)
+        }
         
     }
     

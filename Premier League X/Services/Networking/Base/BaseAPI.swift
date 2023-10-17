@@ -10,7 +10,6 @@ import Alamofire
 
 class BaseAPI<T: TargetType> {
     
-    //var backgroundTaskManager: BackgroundTaskManagerProtocol = BackgroundTaskManager()
     var responseAnalyser: ResponseAnalyserManagerProtocol    = ResponseAnalyserManager()
     
     func fetchData<M: Codable>(target: T, responseClass: M.Type, completion:@escaping (Swift.Result<M?,AuthError>) -> Void) {
@@ -20,12 +19,10 @@ class BaseAPI<T: TargetType> {
         print(params)
         
         
-        guard Helper.isConnectedToNetwork() else {
+        guard NetworkResources.isConnectedToNetwork() else {
             completion(.failure(.noInternet))
             return
         }
-        print("HEADER ===== >>>")
-        print(target.headers)
         
         
         AF.request(target.baseURL + target.path,
@@ -33,9 +30,7 @@ class BaseAPI<T: TargetType> {
                    parameters: params.0,
                    encoding: params.1,
                    headers: target.headers).responseData { [weak self] response in
-            
-            print("😳==URl==\(target.baseURL + target.path) 💁🏻‍♀️==params==\(params)")
-            
+                        
             //1- Analys API Response
             if let error = self?.responseAnalyser.analyseAPIResponse(response: response) {
                 completion(.failure(error))

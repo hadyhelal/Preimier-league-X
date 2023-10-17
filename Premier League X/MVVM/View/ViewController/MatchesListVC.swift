@@ -7,20 +7,67 @@
 
 import UIKit
 
+typealias MatchesScheduals = [ PremierMatch ]
+typealias PremierMatch     = (Date,[Match])
+
+
+
+enum DisplayMatchType  {
+    case matches
+    case favoriteMatches
+}
+
 class MatchesListVC: BaseViewController {
 
+    //Outlets
     @IBOutlet weak var matchesTableView: UITableView!
     
+    
+    //Properties
     lazy var viewModel = MatchesListVM(matchesAPI: MatchesAPI())
     
-    var matches = [ (Date,[Match]) ]()
+    var matches = [MatchesSection]()
+    var favoritematches = [Match]()
     
+    var displayMatchType: DisplayMatchType = .matches
+    
+    //Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureMatchesTableView()
+        
+        binding()
+        
+        viewModel.getMatches()
 
+    }
+
+    //Buttons Actions
+    @IBAction func matchSelectSegment(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            displayMatchType = .matches
+            
+        case 1:
+            displayMatchType = .favoriteMatches
+        default:
+            break
+        }
+        
+        matchesTableView.reloadData()
+
+    }
+    
+    //UI Configurations
+    fileprivate func configureMatchesTableView() {
         matchesTableView.registerCell(cell: DailyMatchesCell.self)
         matchesTableView.rowHeight = DailyMatchesCell.rowHeight
-        
+    }
+    
+    
+    //Binding Logic
+    func binding() {
         viewModel.loadingView = { [weak self] manageLoading in
             self?.loading(manageLoading)
         }
@@ -28,9 +75,7 @@ class MatchesListVC: BaseViewController {
         viewModel.successMessage = { [weak self] successMessage in
             self?.showSuccessMessage(message: successMessage)
         }
-        
-        viewModel.getMatches()
-        
+                
         viewModel.observeMatches = { [weak self] matches in
             self?.matches = matches
             DispatchQueue.main.async {
@@ -40,54 +85,7 @@ class MatchesListVC: BaseViewController {
         
         
     }
-
-    @IBAction func matchSelectSegment(_ sender: UISegmentedControl) {
-       
-    }
     
-    
-}
-
-extension MatchesListVC: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return matches.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matches[section].1.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DailyMatchesCell.id, for: indexPath) as! DailyMatchesCell
-        cell.selectionStyle = .none
-        cell.configure(match: matches[indexPath.section].1[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let match = matches[indexPath.row]
-        print("===HOME TEAM===")
-        print(match)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        let dateLabel = UILabel()
-        view.backgroundColor = .secondarySystemBackground
-        dateLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(dateLabel)
-        NSLayoutConstraint.activate([
-            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        let date = matches[section].0
-        
-        dateLabel.text = DateFormatterManager.getLeagueDateStr(date)
-        
-        return view
-    }
 }
 
 

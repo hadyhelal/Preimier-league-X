@@ -31,7 +31,11 @@ struct Filters: Codable {
 }
 
 // MARK: - Match
-struct Match: Codable {
+struct Match: Codable, Equatable {
+    static func == (lhs: Match, rhs: Match) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let area: Area?
     let competition: Competition?
     let season: Season?
@@ -47,8 +51,15 @@ struct Match: Codable {
     let odds: Odds?
     let referees: [Referee]?
     
+    var isFavorite: Bool = false
     var matchDate: Date {
         DateFormatterManager.getLeagueDate(utcDate ?? "")
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case area, competition, season, id, utcDate, status, matchday, stage, group
+        case lastUpdated, homeTeam, awayTeam
+        case score, odds, referees
     }
 }
 

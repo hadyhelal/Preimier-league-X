@@ -28,15 +28,7 @@ class DailyMatchesCell: UITableViewCell {
     @IBOutlet weak var awayTeamImage: UIImageView!
     @IBOutlet weak var awayTeamName: UILabel!
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        homeTeamImage.image = nil
-        awayTeamImage.image = nil
-    }
-    
-    @IBAction func favoriteButton(_ sender: UIButton) {
-        
-    }
+    var favoriteMatch: (()-> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,6 +39,17 @@ class DailyMatchesCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        homeTeamImage.image = nil
+        awayTeamImage.image = nil
+    }
+    
+    @IBAction func favoriteButton(_ sender: UIButton) {
+        favoriteMatch?()
+    }
+    
     
     func configure(match: Match) {
         
@@ -62,6 +65,8 @@ class DailyMatchesCell: UITableViewCell {
         awayTeamName.text      = match.awayTeam?.shortName
         
         configureMatch(match: match)
+        
+        updateFavorite(favorite: match.isFavorite)
     }
     
     private func configureMatch(match: Match) {
@@ -79,6 +84,15 @@ class DailyMatchesCell: UITableViewCell {
             matchResultView.isHidden   = true
             
             matchStartsTime.text = DateFormatterManager.convertToAmBm(match.utcDate ?? "")
+        }
+    }
+    
+    func updateFavorite(favorite: Bool) {
+        switch favorite {
+        case true:
+            favBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        case false:
+            favBtn.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
     

@@ -14,9 +14,9 @@ class ArrangeMatchManager: MatchesArrangedProtocol {
         var matchesVar = matches
         matchesVar.sort{ $0.matchDate < $1.matchDate}
         
-        var arrangedMatches = self.getArrangedMatches(&matchesVar)
+        var arrangedMatches = getArrangedMatches(&matchesVar)
         
-        arrangedMatches = self.removeAnyPreviousMatches(arrangedMatches: arrangedMatches)
+        arrangedMatches =  removeAnyPreviousMatches(arrangedMatches: arrangedMatches)
         
         return arrangedMatches
     }
@@ -36,7 +36,7 @@ class ArrangeMatchManager: MatchesArrangedProtocol {
             
             let nextMatch = matches[idx + 1]
             
-            if match.matchDate.hasSame(.day, as: nextMatch.matchDate) {
+            if match.matchDate.hasSame(.day, as: nextMatch.matchDate) { //already filtered so we just can check with same day only
                 nowDay.matches.append(nextMatch)
                 
             } else {

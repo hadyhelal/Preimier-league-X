@@ -200,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9B16372ADED4F50076BFDB /* ArrangedMatchManager.swift */,
-				5B9B16342ADECE9D0076BFDB /* API Models */,
+				5B9B16342ADECE9D0076BFDB /* Entities */,
 				079642F32ADD9E59002DFD00 /* MatchesAPI */,
 			);
 			path = Models;
@@ -336,13 +336,13 @@
 			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
-		5B9B16342ADECE9D0076BFDB /* API Models */ = {
+		5B9B16342ADECE9D0076BFDB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				07585E742ADC83DF0052697F /* MatchesModel.swift */,
 				5B9B162E2ADE9D4F0076BFDB /* MatchesSection.swift */,
 			);
-			path = "API Models";
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

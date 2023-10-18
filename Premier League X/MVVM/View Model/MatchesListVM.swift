@@ -45,13 +45,7 @@ class MatchesListVM {
                     self.errorMessage?("No matches to display")
                     return
                 }
-                
-//                matches.sort{ $0.matchDate < $1.matchDate}
-//
-//                var arrangedMatches = self.getArrangedMatches(&matches)
-//
-//                arrangedMatches = self.removeAnyPreviousMatches(arrangedMatches: arrangedMatches)
-//
+
                 let arrangedMatches = self.matchQueryManager.getArrangedMatchesFrom(matches)
                 self.observeMatches?(arrangedMatches)
                 
